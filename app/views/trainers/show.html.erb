@@ -20,5 +20,6 @@
   <p> <%= image_tag pokemon.image_url %> </p>
 <% end %>
 <%= link_to 'Edit', edit_trainer_path(@trainer) %> |
-<%= link_to 'Back', trainers_path %> | <%= link_to 'Add Pocketmonster to Database', new_pocketmonster_path %>
+<%= link_to 'Back', trainers_path %> | <%= link_to 'Home', root_path %> | <%= link_to 'Add Pocketmonster to Database', new_pocketmonster_path %>
+
 <%= button_to "See All Available Pocketmonsters", pocketmonsters_path, :class => "button", :method => :get  %>
