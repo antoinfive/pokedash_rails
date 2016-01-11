@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokedash</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="input-group" align="center" >
+      <div class="form-inline">
+ <%= image_tag("http://i.imgur.com/3VDjtG3.png") %>
+  <% if current_user == nil %>
+  <h1>Welcome to PokeDash</h1>
+  <h4>Please Sign in or Sign up to continue</h4>
+ <% else %>
+ <br>
+  <% if current_user %>
+  <h3>  Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %> </h3>
+  <% else %>
+  <h3>  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> </h3>
+  <% end %>
+  <% end %>
+  <br>
+</div>
+<%= yield %>
+</div>
+
+</body>
+</html>

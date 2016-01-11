@@ -1,0 +1,2 @@
+module PocketmonstersHelper
+end

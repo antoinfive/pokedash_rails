@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Name:</strong>
+  <%= @trainer.name %>
+</h1>
+  <h3>
+    <strong> Username: <%= @trainer.username %></strong></p>
+  </h3>
+  <p>
+  <strong> Pocketmonster Count: <%= @trainer.pocketmonsters.count %> </strong>
+  </p>
+
+
+
+
+<h4>  <strong> Pocketmonsters: </strong> </h4>
+  <% @trainer.pocketmonsters.each do |pokemon| %>
+  <p> <%= pokemon.name %> </p>
+  <p> <%= image_tag pokemon.image_url %> </p>
+<% end %>
+<%= link_to 'Edit', edit_trainer_path(@trainer) %> |
+<%= link_to 'Back', trainers_path %> | <%= link_to 'Add Pocketmonster to Database', new_pocketmonster_path %>
+<%= button_to "See All Available Pocketmonsters", pocketmonsters_path, :class => "button", :method => :get  %>

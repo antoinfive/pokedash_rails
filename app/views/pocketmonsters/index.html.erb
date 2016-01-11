@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pocketmonsters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pocketmonsters.each do |pocketmonster| %>
+      <tr>
+        <td><%= pocketmonster.name %></td>
+        <td> <%= pocketmonster.kind %></td>
+        <td><%= image_tag pocketmonster.image_url %></td>
+        <td><%= link_to 'Show', pocketmonster %></td>
+        <td><%= link_to 'Edit', edit_pocketmonster_path(pocketmonster) %></td>
+        <td><%= link_to 'Destroy', pocketmonster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pocketmonster', new_pocketmonster_path %>

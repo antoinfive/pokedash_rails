@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Name:</strong>
+  <%= @pocketmonster.name %>
+</h1>
+<h4><strong>Type:</strong>
+<%= @pocketmonster.kind %>
+</h4>
+<h4>
+  <strong>Trainer:</strong>
+  <%#= @pocketmonster.trainer.username %>
+</h4>
+<p>
+  <%= image_tag (@pocketmonster.image_url) %>
+</p>
+
+<%= link_to 'Edit', edit_pocketmonster_path(@pocketmonster) %> |
+<%= link_to 'Back', pocketmonsters_path %>
