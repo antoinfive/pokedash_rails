@@ -1,0 +1,5 @@
+<% @trainers.each do |trainer| %>
+  <div class="trainer">
+    <h1 class="trainer-username"> <%= link_to trainer_path, trainer.username %></h1>
+  </div>
+<% end %>

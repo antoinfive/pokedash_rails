@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get '/signup' => 'trainers#new'
   post '/users' => 'trainers#create'
 
+  get '/search' => 'trainers#search'
+
 end

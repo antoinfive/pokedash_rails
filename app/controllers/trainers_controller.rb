@@ -10,6 +10,16 @@ class TrainersController < ApplicationController
     end
   end
 
+  def search
+    if params[:search]
+     @trainers = Trainer.search(params[:search]).order("created_at DESC")
+     render 'view_from_search'
+   else
+     @trainers = Trainer.order("created_at DESC")
+     render 'view_from_search'
+   end
+  end
+
   def show
     @trainer = Trainer.find(params[:id])
   end
